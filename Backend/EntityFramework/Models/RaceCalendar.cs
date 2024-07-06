@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
+    [Table("race_calendar")]
     public class RaceCalendar
     {
+        [Column("id")]
+        [Key]
         public int Id { get; set; }
+        [Column("race_id")]
+        [ForeignKey(nameof(Race))]
         public int RaceId { get; set; }
         public Race Race { get; set; }
+        [Column("start_date")]
         public DateTime StartDate { get; set; }
+        [Column("end_date")]
         public DateTime EndDate { get; set; }
     }
 }

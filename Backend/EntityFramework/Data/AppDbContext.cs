@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityFramework.Models;
-using EntityFramework.ModelConfigurations;
 
 namespace EntityFramework.Data
 {
@@ -29,27 +28,9 @@ namespace EntityFramework.Data
         public DbSet<RiderRankingEachYearAccumulated> RiderRankingsEachYearAccumulated { get; set; }
         public DbSet<Team> Teams { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            modelBuilder.ApplyConfiguration(new NationConfiguration());
-            modelBuilder.ApplyConfiguration(new NationPointsConfiguration());
-            modelBuilder.ApplyConfiguration(new RiderConfiguration());
-            modelBuilder.ApplyConfiguration(new RiderPointsConfiguration());
-            modelBuilder.ApplyConfiguration(new TeamConfiguration());
-            modelBuilder.ApplyConfiguration(new RaceConfiguration());
-            modelBuilder.ApplyConfiguration(new RaceClassificationConfiguration());
-            modelBuilder.ApplyConfiguration(new PointSystemConfiguration());
-            modelBuilder.ApplyConfiguration(new ResultConfiguration());
-            modelBuilder.ApplyConfiguration(new RaceDateConfiguration());
-            modelBuilder.ApplyConfiguration(new RaceCalendarConfiguration());
-            modelBuilder.ApplyConfiguration(new RiderRankingEachYearConfiguration());
-            modelBuilder.ApplyConfiguration(new RiderRankingEachYearAccumulatedConfiguration());
-            modelBuilder.ApplyConfiguration(new RiderRankingEachDecadeConfiguration());
-            modelBuilder.ApplyConfiguration(new RiderRanking3YearSpanConfiguration());
-            modelBuilder.ApplyConfiguration(new NationRankingEachYearConfiguration());
-            modelBuilder.ApplyConfiguration(new NationRankingEachYearAccumulatedConfiguration());
-
-            base.OnModelCreating(modelBuilder);
+            optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("SUPABASE_CONNECTION_STRING"));
         }
     }
 }

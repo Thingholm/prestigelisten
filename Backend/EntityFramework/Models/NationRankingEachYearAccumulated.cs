@@ -8,14 +8,23 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
+    [Table("nation_rankings_each_year_accumulated")]
     public class NationRankingEachYearAccumulated
     {
+        [Column("id")]
+        [Key]
         public int Id { get; set; }
+        [Column("nation_id")]
+        [ForeignKey(nameof(Nation))]
         public int NationId { get; set; }
         public Nation Nation { get; set; }
+        [Column("year")]
         public int Year { get; set; }
-        public int Points { get; set; }
+        [Column("points")]
+        public int? Points { get; set; }
+        [Column("placement")]
         public int? Placement { get; set; }
+        [Column("number_of_results")]
         public int NumberOfResults { get; set; }
     }
 }

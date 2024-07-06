@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
+    [Table("race_classifications")]
     public class RaceClassification
     {
+        [Column("id")]
+        [Key]
         public int Id { get; set; }
+        [Column("name")]    
         public string Name { get; set; }
     }
 }

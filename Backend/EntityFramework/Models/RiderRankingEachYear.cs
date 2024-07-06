@@ -8,13 +8,21 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
+    [Table("rider_rankings_each_year")]
     public class RiderRankingEachYear
     {
+        [Column("id")]
+        [Key]
         public int Id { get; set; }
+        [Column("rider_id")]
+        [ForeignKey(nameof(Rider))]
         public int RiderId { get; set; }
         public Rider Rider { get; set; }
+        [Column("year")]
         public int Year { get; set; }
+        [Column("points")]
         public int? Points { get; set; }
+        [Column("placement")]
         public int? Placement { get; set; }
     }
 }
