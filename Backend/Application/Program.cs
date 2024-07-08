@@ -1,5 +1,7 @@
-﻿using EntityFramework.Data;
+﻿using Application.Services;
+using EntityFramework.Data;
 using EntityFramework.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application
 {

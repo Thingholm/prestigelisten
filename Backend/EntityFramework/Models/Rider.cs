@@ -27,7 +27,7 @@ namespace EntityFramework.Models
         [Column("team_id")]
         [ForeignKey(nameof(Team))]
         public int? TeamId { get; set; }
-        public Team Team { get; set; }
+        public Team? Team { get; set; }
         [Column("active")]
         public bool Active { get; set; }
     }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
-    [Table("team")]
+    [Table("teams")]
     public class Team
     {
         [Column("id")]

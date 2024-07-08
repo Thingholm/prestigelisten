@@ -4,7 +4,8 @@
       "commandName": "Project",
       "workingDirectory": "C:\\Users\\Rasmu\\github\\prestigelisten\\Backend",
       "environmentVariables": {
-        "SUPABASE_CONNECTION_STRING": "User Id=postgres.ijyqomzpcigbnwjjohrd;Password=jMcS3CtUQ$pm7gL;Server=aws-0-eu-central-1.pooler.supabase.com;Port=6543;Database=postgres;"
+        "SUPABASE_CONNECTION_STRING": "User Id=postgres.ijyqomzpcigbnwjjohrd;Password=jMcS3CtUQ$pm7gL;Server=aws-0-eu-central-1.pooler.supabase.com;Port=6543;Database=postgres;",
+        "GOOGLE_CLOUD_API_KEY": "AIzaSyDBGMG3EMebBUhlWHhMzuNbr94ENgNqqPw"
       }
     }
   }
