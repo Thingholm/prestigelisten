@@ -28,6 +28,10 @@ namespace EntityFramework.Models
         public ResultType ResultType { get; set; }
         [Column("placement")]
         public int? Placement { get; set; }
+        [Column("race_date_id")]
+        [ForeignKey(nameof(RaceDate))]
+        public int? RaceDateId { get; set; }
+        public RaceDate RaceDate { get; set; }
     }
 
 }
