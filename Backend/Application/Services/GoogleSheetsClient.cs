@@ -33,13 +33,5 @@ namespace Application.Services
                 ApplicationName = ApplicationName
             });
         }
-
-        public async Task TestAsync()
-        {
-            var getRequest = SheetsService.Spreadsheets.Values.Get("14JS3ioc3jaFTDX2wuHRniE3g3S2yyg1QkfJ7FiNgAE8", "All time!A:E");
-            var getResponse = await getRequest.ExecuteAsync();
-            IList<IList<Object>> values = getResponse.Values;
-        }
-
     }
 }

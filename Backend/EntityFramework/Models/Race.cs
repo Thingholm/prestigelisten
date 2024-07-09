@@ -17,11 +17,11 @@ namespace EntityFramework.Models
         [Column("name")]
         public string Name { get; set; }
         [Column("active_span")]
-        public string ActiveSpan { get; set; }
+        public string? ActiveSpan { get; set; }
         [Column("nation_id")]
         [ForeignKey(nameof(Nation))]
-        public int NationId { get; set; }
-        public Nation Nation { get; set; }
+        public int? NationId { get; set; }
+        public Nation? Nation { get; set; }
         [Column("race_classification_id")]
         [ForeignKey(nameof(RaceClassification))]
         public int RaceClassificationId { get; set; }
@@ -30,6 +30,6 @@ namespace EntityFramework.Models
         public bool Active { get; set; }
         [Column("color_hex")]
         [MaxLength(6)]
-        public string ColorHex { get; set; }
+        public string? ColorHex { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace EntityFramework.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("SUPABASE_CONNECTION_STRING"));
+            optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("SUPABASE_CONNECTION_STRING")).EnableSensitiveDataLogging().LogTo(Console.WriteLine);
         }
     }
 }
