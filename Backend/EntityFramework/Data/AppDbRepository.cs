@@ -15,6 +15,7 @@ namespace EntityFramework.Data
         public List<NationRankingEachYear> NationRankingsEachYear { get; set; }
         public List<NationRankingEachYearAccumulated> NationRankingsEachYearAccumulated { get; set; }
         public List<PointSystem> PointSystems { get; set; }
+        public List<PreviousNationalities> PreviousNationalities { get; set; }
         public List<Race> Races { get; set; }
         public List<RaceCalendar> RaceCalendars { get; set; }
         public List<RaceClassification> RaceClassifications { get; set; }

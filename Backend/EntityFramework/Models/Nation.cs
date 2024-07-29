@@ -14,6 +14,7 @@ namespace EntityFramework.Models
     {
         [Column("id")]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("name")]
         public string Name { get; set; }

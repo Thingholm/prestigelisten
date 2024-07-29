@@ -14,6 +14,7 @@ namespace EntityFramework.Models
     {
         [Column("id")]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("race_id")]
         [ForeignKey(nameof(Race))]
@@ -24,7 +25,6 @@ namespace EntityFramework.Models
         public int RiderId { get; set; }
         public Rider Rider { get; set; }
         [Column("result_type")]
-        [EnumDataType(typeof(ResultType))]
         public ResultType ResultType { get; set; }
         [Column("placement")]
         public int? Placement { get; set; }
@@ -32,6 +32,8 @@ namespace EntityFramework.Models
         [ForeignKey(nameof(RaceDate))]
         public int? RaceDateId { get; set; }
         public RaceDate RaceDate { get; set; }
+        [Column("year")]
+        public int year { get; set; }
     }
 
 }

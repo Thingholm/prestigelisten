@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
-    [Table("race_date")]
+    [Table("race_dates")]
     public class RaceDate
     {
         [Column("id")]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("race_id")]
         [ForeignKey(nameof(Race))]
