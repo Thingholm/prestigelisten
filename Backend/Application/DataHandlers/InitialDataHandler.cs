@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Processors
 {
-    public class CompleteProcessor
+    public class InitialDataHandler
     {
         public List<Result> resultList = new List<Result>();
         public List<RiderPoints> riderPointsList = new List<RiderPoints>();

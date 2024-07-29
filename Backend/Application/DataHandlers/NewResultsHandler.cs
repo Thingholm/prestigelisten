@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.Processors
 {
-    public class NewResultProcessor
+    public class NewResultsHandler
     {
     }
 }
