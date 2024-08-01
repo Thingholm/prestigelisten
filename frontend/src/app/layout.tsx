@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ReactQueryWrapper from "./ReactQueryWrapper";
 import "flag-icons/css/flag-icons.min.css";
+import "@/style/style.css"
 import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {

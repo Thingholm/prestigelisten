@@ -20,7 +20,9 @@ export default function Header(){
                     </li>
                 </ul>
             </nav>
-            <Link href="#" className="btn contained primary">Se listen</Link>
+            <div>
+                <Link href="#" className="btn contained primary">Se listen</Link>
+            </div>
         </header>  
     );
 }

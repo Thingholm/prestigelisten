@@ -11,7 +11,7 @@ export function FormatRiderPoints(data: object[]){
         return [...acc, [placement, name, nation, birthYear, points]];
     }, [])
 
-    const header: string[] = ["Placering", "Rytter", "Nation", "Årgang", "Point"];
+    const header: string[] = ["Nr.", "Rytter", "Nation", "Årgang", "Point"];
     const columnTypes: ColumnTypes[] = ["Rank", "RiderName", "Nation", "BirthYear", "Points"];
 
     return {

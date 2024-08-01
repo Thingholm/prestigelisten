@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IoArrowForwardOutline } from "react-icons/io5";
 
 interface HeaderLinkProps {
     href: string,
@@ -7,6 +8,6 @@ interface HeaderLinkProps {
 
 export default function HeaderLink({href, children} : HeaderLinkProps){
     return(
-        <Link href={href}>{children}</Link>
+        <Link href={href} className="header-link">{children} <IoArrowForwardOutline /></Link>
     )
 }

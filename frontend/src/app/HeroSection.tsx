@@ -6,15 +6,17 @@ import { FormatRiderPoints } from "@/data/formatter";
 import { GetPlacements } from "@/data/getPlacements";
 import { useRiderPoints } from "@/data/queries/riderPoints";
 import Link from "next/link";
+import { ImQuotesLeft } from "react-icons/im";
 
 export default function HeroSection(){
-    const riderPointsQuery = useRiderPoints(20);
+    const riderPointsQuery = useRiderPoints(30);
 
     const riderPoints = riderPointsQuery.data && FormatRiderPoints(GetPlacements(riderPointsQuery.data));
     return(
-        <section>
-            <div className="flex h">
+        <section className="hero">  
+            <div className="flex h h-5050">
                 <div>
+                    <ImQuotesLeft className="quote-icon"/>
                     <p className="quote-text">Cycling isn't a game, it's a sport. Tough, hard and unpitying, and it requires great sacrifices. One plays football, or tennis, or hockey. One doesn't play at cycling.</p>
                     <p className="quote-byline">- Jean De Gribaldy</p>
 
@@ -29,7 +31,7 @@ export default function HeroSection(){
                 </div>
                 <div>
                     <HeaderLink href="#">All time største ryttere</HeaderLink>
-                    { riderPoints && <Table data={riderPoints.data} header={riderPoints.header} columnTypes={riderPoints.columnTypes}/>}
+                    { riderPoints && <Table data={riderPoints.data} header={riderPoints.header} columnTypes={riderPoints.columnTypes} className="card"/>}
                 </div>
             </div>
         </section>
