@@ -1,14 +1,20 @@
-import "flag-icons/css/flag-icons.min.css";
+export type Rank = number;
+export type RiderName = string[];
+export type Nation = string[];
+export type BirthYear = number;
+export type Points = number;
 
-type ColumnSpecification = "Rank" | "RiderName" | "Nation" | "Points";
+export type Column = Rank | RiderName | Nation | BirthYear | Points;
+export type ColumnTypes = "Rank" | "RiderName" | "Nation" | "BirthYear" | "Points";
+
 
 interface TableProps {
     header: string[],
-    data: Array<Array<any>>,
-    columnSpecifications: ColumnSpecification[]
+    data: Column[][],
+    columnTypes: ColumnTypes[]
 }
 
-export default function Table({header, data, columnSpecifications}: TableProps){
+export default function Table({header, data, columnTypes}: TableProps){
     return(
         <table>
             <tr>
@@ -24,14 +30,18 @@ export default function Table({header, data, columnSpecifications}: TableProps){
                 return(
                     <tr key={"r" + rowIndex}>
                         {r?.map((c: any, index: number) => {
-                            switch(columnSpecifications[index]){
+                            switch(columnTypes[index]){
                                 case "RiderName":
                                     return(
-                                        <td key={"c" + index}><span className="bold">{c[0]}</span> {c[1]}</td>
+                                        <td key={"c" + index}><span className={"m fi fi-" + c[2]}></span><span className="bold">{c[0]}</span> {c[1]}</td>
                                     );
                                 case "Nation":
                                     return(
-                                        <td key={"c" + index}><span className={"fi fi-" + c[0]}></span>{c[1]}</td>
+                                        <td key={"c" + index}><span className={"d fi fi-" + c[0]}></span>{c[1]}</td>
+                                    );
+                                case "BirthYear":
+                                    return(
+                                        <td key={"c" + index} className="d">{c}</td>
                                     );
                                 default:
                                     return(

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ReactQueryWrapper from "./ReactQueryWrapper";
+import "flag-icons/css/flag-icons.min.css";
+import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +17,7 @@ export default function RootLayout({
     <html lang="dk">
       <body>
         <ReactQueryWrapper>
+          <Header/>
           {children}
         </ReactQueryWrapper>
         </body>
