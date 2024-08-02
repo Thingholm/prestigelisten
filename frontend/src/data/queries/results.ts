@@ -1,12 +1,12 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import supabase from "../supabaseClient";
 
-export const useRiderPoints = (range?: number) => {
+export const useResults = (range: number) => {
     const queryClient = useQueryClient();
 
     const queryFn = async () => {
         let { data, error } = await supabase
-            .from("rider_points")
+            .from("results")
             .select(`
                 *, 
                 riders (
@@ -14,15 +14,25 @@ export const useRiderPoints = (range?: number) => {
                     nations (
                         *
                     )
+                ),
+                race_dates (
+                    *
+                ),
+                races (
+                    *,
+                    nations (
+                        *
+                    )
                 )
             `)
-            .order("points", { ascending: false })
+            .gt("race_date_id", 0)
+            .order("race_dates(date)", {ascending: false})
             .range(0, range ? range - 1 : 10000)
         return data;
     }
 
     const query = useQuery({
-        queryKey: ["riderPoints", range],
+        queryKey: ["results", range],
         queryFn: queryFn
     });
 

@@ -3,7 +3,7 @@
 import HeaderLink from "@/components/HeaderLink";
 import Table from "@/components/Table";
 import { FormatRiderPoints } from "@/data/formatter";
-import { GetPlacements } from "@/data/getPlacements";
+import { GetPlacements } from "@/utils/getPlacements";
 import { useRiderPoints } from "@/data/queries/riderPoints";
 import Link from "next/link";
 import { ImQuotesLeft } from "react-icons/im";
