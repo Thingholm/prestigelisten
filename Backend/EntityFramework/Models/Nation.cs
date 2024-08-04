@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EntityFramework.Models
 {
     [Table("nations")]
-    public class Nation : Model
+    public class Nation : IModel
     {
         [Column("id")]
         [Key]

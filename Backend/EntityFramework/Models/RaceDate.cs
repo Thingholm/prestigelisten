@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("race_dates")]
-    public class RaceDate : Model
+    public class RaceDate : IModel
     {
         [Column("id")]
         [Key]

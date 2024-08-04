@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("point_system")]
-    public class PointSystem : Model
+    public class PointSystem : IModel
     {
         [Column("id")]
         [Key]

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("rider_points")]
-    public class RiderPoints : Model
+    public class RiderPoints : IModel
     {
         [Column("id")]
         [Key]

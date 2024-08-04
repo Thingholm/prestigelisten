@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("rider_rankings_3_year_span")]
-    public class RiderRanking3YearSpan : Model, ModelPlacement
+    public class RiderRanking3YearSpan : IModel, IModelPlacement
     {
         [Column("id")]
         [Key]

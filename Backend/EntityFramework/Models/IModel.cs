@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace EntityFramework.Models
 {
-    public interface ModelPlacement
+    public interface IModel
     {
-        public int? Points { get; set; }
-        public int? Placement { get; set; }
+        public int Id { get; set; }
     }
 }
