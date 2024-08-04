@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("previous_nationalities")]
-    public class PreviousNationalities
+    public class PreviousNationalities : Model
     {
         [Column("id")]
         [Key]

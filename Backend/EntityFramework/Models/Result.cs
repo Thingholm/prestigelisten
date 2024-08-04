@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("results")]
-    public class Result
+    public class Result : Model
     {
         [Column("id")]
         [Key]

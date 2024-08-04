@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("rider_rankings_each_year_accumulated")]
-    public class RiderRankingEachYearAccumulated
+    public class RiderRankingEachYearAccumulated : Model, ModelPlacement
     {
         [Column("id")]
         [Key]
@@ -22,7 +22,7 @@ namespace EntityFramework.Models
         [Column("year")]
         public int Year { get; set; }
         [Column("points")]
-        public int Points { get; set; }
+        public int? Points { get; set; }
         [Column("placement")]
         public int? Placement { get; set; }
     }

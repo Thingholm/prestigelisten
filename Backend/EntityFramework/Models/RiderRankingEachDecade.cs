@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityFramework.Models
 {
     [Table("rider_rankings_each_decade")]
-    public class RiderRankingEachDecade
+    public class RiderRankingEachDecade : Model, ModelPlacement
     {
         [Column("id")]
         [Key]
